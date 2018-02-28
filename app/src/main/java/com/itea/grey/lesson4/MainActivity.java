@@ -1,6 +1,5 @@
 package com.itea.grey.lesson4;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -15,13 +14,12 @@ import static com.itea.grey.lesson4.ControlActivity.RED_KEY;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    public static final int SECOND_ACTIVITY_CODE = 1;
-
     TextView tvNumberR;
     TextView tvNumberG;
     TextView tvNumberB;
+    Button bGetColor;
 
+  public static final int SECOND_ACTIVITY_CODE = 1;
     int red;
     int green;
     int blue;
@@ -39,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
                 blue = data.getExtras().getInt(BLUE_KEY);
 
                 colorView.setBackgroundColor(Color.rgb(red, green, blue));
-//                tvNumberR.setText(red);
+                tvNumberR.setText(String.valueOf(red));
+                tvNumberG.setText(String.valueOf(green));
+                tvNumberB.setText(String.valueOf(blue));
 
             } else {
-                tvNumberR.setText("1000");
+                tvNumberR.setText("");
             }
         }
-//       String textRed = String.valueOf(red);
-//                tvNumberR.setText(textRed);
     }
 
     @Override
@@ -54,12 +52,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvNumberR = (TextView)findViewById(R.id.tvControlR);
-        tvNumberG = (TextView)findViewById(R.id.tvControlG);
-        tvNumberB = (TextView)findViewById(R.id.tvControlB);
+        tvNumberR = (TextView)findViewById(R.id.tvNumberR);
+        tvNumberG = (TextView)findViewById(R.id.tvNumberG);
+        tvNumberB = (TextView)findViewById(R.id.tvNumberB);
         colorView = (View)findViewById(R.id.colorView);
-//        tvNumberR.setText("111");
-        Button bGetColor;
 
         bGetColor = (Button)findViewById(R.id.bGetColor);
         bGetColor.setOnClickListener(new View.OnClickListener() {
