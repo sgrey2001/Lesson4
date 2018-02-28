@@ -1,119 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="20dp"
+    android:paddingTop="20dp"
     tools:context="com.itea.grey.lesson4.ControlActivity"
-    android:orientation="vertical">
+    >
+    <LinearLayout
+        android:id="@+id/colorControlView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="2">
-
-        <View
-            android:id="@+id/colorControlView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/backgroundColor"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_below="@+id/colorControlView"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentLeft="true"
         android:orientation="vertical"
-        android:paddingTop="20dp">
-
-        <LinearLayout
+        android:id="@+id/linearLayout">
+        <TextView
+            android:id="@+id/tvControlR"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:orientation="horizontal"
-            android:paddingTop="20dp">
-
-            <TextView
-                android:id="@+id/tvControlR"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="R" />
-
-            <TextView
-                android:id="@+id/tvControlG"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="G" />
-
-            <TextView
-                android:id="@+id/tvControlB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="B" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:paddingTop="20dp">
-
-            <SeekBar
-                android:id="@+id/sBarR"
-                style="@style/Widget.AppCompat.SeekBar.Discrete"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:max="255"
-                android:progress="3" />
-
-            <SeekBar
-                android:id="@+id/sBarG"
-                style="@style/Widget.AppCompat.SeekBar.Discrete"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:max="255"
-                android:progress="3" />
-
-            <SeekBar
-                android:id="@+id/sBarB"
-                style="@style/Widget.AppCompat.SeekBar.Discrete"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:max="255"
-                android:progress="3" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/bSetColor"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Set Color" />
+            android:text="R" />
+
+        <TextView
+            android:id="@+id/tvNumberR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TextView" />
     </LinearLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/colorControlView"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout2">
+        <TextView
+            android:id="@+id/tvControlG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="G" />
+
+        <TextView
+            android:id="@+id/tvNumberG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/colorControlView"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvControlB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="B" />
+
+        <TextView
+            android:id="@+id/tvNumberB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TextView" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/tvRSB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginTop="27dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvGSB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvRSB"
+        android:layout_marginTop="25dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvBSB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvGSB"
+        android:layout_marginTop="25dp"
+        android:text="TextView" />
+
+    <SeekBar
+        android:id="@+id/sBarR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvRSB"
+        android:layout_marginLeft="20dp"
+        android:layout_alignBaseline="@+id/tvRSB"
+        android:max="255"
+        />
+
+    <SeekBar
+        android:id="@+id/sBarG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvGSB"
+        android:layout_marginLeft="20dp"
+        android:layout_alignBaseline="@+id/tvGSB"
+        android:max="255"
+        />
+
+    <SeekBar
+        android:id="@+id/sBarB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvBSB"
+        android:layout_marginLeft="20dp"
+        android:layout_alignBaseline="@+id/tvBSB"
+        android:max="255"
+        />
+
+    <Button
+        android:id="@+id/bSetColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="Get Color" />
+
+
+</RelativeLayout>
+
