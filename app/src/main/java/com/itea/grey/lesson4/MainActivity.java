@@ -14,17 +14,17 @@ import static com.itea.grey.lesson4.ControlActivity.RED_KEY;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tvNumberR;
-    TextView tvNumberG;
-    TextView tvNumberB;
-    Button bGetColor;
+    private TextView tvNumberR;
+    private TextView tvNumberG;
+    private TextView tvNumberB;
+    private Button bGetColor;
 
-  public static final int SECOND_ACTIVITY_CODE = 1;
-    int red;
-    int green;
-    int blue;
+    private static final int SECOND_ACTIVITY_CODE = 1;
+    private int red;
+    private int green;
+    private int blue;
 
-    View colorView;
+    private View colorView;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -56,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
         tvNumberG = (TextView)findViewById(R.id.tvNumberG);
         tvNumberB = (TextView)findViewById(R.id.tvNumberB);
         colorView = (View)findViewById(R.id.colorView);
+
+        tvNumberR.setText(String.valueOf(0));
+        tvNumberG.setText(String.valueOf(0));
+        tvNumberB.setText(String.valueOf(0));
+
 
         bGetColor = (Button)findViewById(R.id.bGetColor);
         bGetColor.setOnClickListener(new View.OnClickListener() {
